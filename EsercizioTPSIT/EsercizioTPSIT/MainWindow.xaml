@@ -1,12 +1,30 @@
 ﻿<Window x:Class="EsercizioTPSIT.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EsercizioTPSIT"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Bancomat" Height="350" Width="500">
+    <Grid Margin="10">
+        <StackPanel>
+            <!-- Schermata login -->
+            <TextBlock Text="Inserisci PIN:" FontSize="16" Margin="0,0,0,5"/>
+            <PasswordBox x:Name="txtPIN" Width="150" Margin="0,0,0,5"/>
+            <Button Content="Accedi" Width="150" Click="BtnLogin_Click" Margin="0,0,0,15"/>
 
+            <!-- Menu principale -->
+            <StackPanel x:Name="menuPanel" Visibility="Collapsed">
+                <TextBlock Text="Seleziona Operazione:" FontSize="16" Margin="0,0,0,5"/>
+                <Button Content="Prelievo" Width="150" Click="BtnPrelievo_Click" Margin="0,0,0,5"/>
+                <Button Content="Visualizza Saldo" Width="150" Click="BtnSaldo_Click"/>
+            </StackPanel>
+
+            <!-- Prelievo -->
+            <StackPanel x:Name="prelievoPanel" Visibility="Collapsed">
+                <TextBlock Text="Inserisci importo:" FontSize="16" Margin="0,10,0,5"/>
+                <TextBox x:Name="txtImporto" Width="150" Margin="0,0,0,5"/>
+                <Button Content="Conferma Prelievo" Width="150" Click="BtnConfermaPrelievo_Click"/>
+            </StackPanel>
+
+            <!-- Saldo -->
+            <TextBlock x:Name="lblSaldo" FontSize="16" Visibility="Collapsed" Margin="0,10,0,0"/>
+        </StackPanel>
     </Grid>
 </Window>
